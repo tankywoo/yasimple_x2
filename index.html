@@ -12,14 +12,14 @@
     {{ page.content }}
   {%- else %}
   <div class="category_item">
-    {%- for category in site.pages %}
+    {%- for category in pages %}
       {# Only list second-level directory #}
       {%- if site.default_ext not in category %}
     <div class="category">
       <div class="category_name">
         <h2 id="{{ category.name }}">
           {%- if 'label' in category %}{{ category.label }}
-          {%- else %}{{ category.name|capitalize }}{% endif%}
+          {%- else %}{{ category.name|capitalize }}{% endif %}
         </h2>
       </div>
       <div class="category_list">
