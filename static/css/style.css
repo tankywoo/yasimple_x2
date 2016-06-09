@@ -169,6 +169,14 @@ hr {
   text-decoration: none;
 }
 
+.relation {
+  border: 1px solid #eee;
+  padding: 1em;
+  margin: 1em 0;
+  background: #fefefe;
+  font-size: 80%;
+}
+
 /* Table of Contents */
 .toc {
   margin: 0 0.5em;

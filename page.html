@@ -25,5 +25,15 @@
 <div class="clearfix"></div>
 <div id="content">
   {{ page.content }}
+  {% if page.relation %}
+  <div class="relation">
+    Related:
+    <ul>
+  {% for r in page.relation %}
+    <li><a href="{{ site.root }}/{{ r.category }}/{{ r.filename }}">{{ r.title }}</a></li>
+  {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
 </div>
 {%- endblock %}
