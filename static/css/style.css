@@ -287,6 +287,42 @@ code {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+table.hlcodetable {
+    border-collapse: separate !important;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.hlcodetable td {
+    padding: 0;
+    border: none;
+}
+
+.hlcodetable td.code {
+  width: 100%;
+}
+
+.hlcodetable pre {
+  font-size: .9em;
+  padding: 8px 8px 7px 8px;
+  white-space: pre-wrap;
+}
+
+.hlcodetable .linenodiv {
+    border-right: 1px solid #ccc;
+}
+
+.hlcodetable .linenodiv pre {
+    margin: 0;
+    border: none;
+}
+
+.hlcodetable .hlcode pre {
+    margin: 0;
+    border: none;
+}
+
 /* Reset pygement css */
 .hlcode .err {
   color: inherit;
