@@ -151,6 +151,9 @@ hr {
   margin-top: 0;
 }
 
+.coll_name:before { content: '['; }
+.coll_name:after { content: ']'; }
+
 #content {
   border-bottom: 0.1em solid #ccc;
   padding: 0.2em 0;

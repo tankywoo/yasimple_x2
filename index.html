@@ -32,7 +32,7 @@
               <span class="page_description">&nbsp;&nbsp;#&nbsp;{{ page.description }}</span>
               {% endif %}
             {%- elif 'pages' in page %}  {# for collection #}
-              {{ page.name }}&nbsp;&#58;&nbsp;
+              <span class="coll_name">{{ page.name }}</span>&nbsp;&#58;&nbsp;
               {%- for coll_page in page.pages %}
                 <a href="./{{ category.name }}/{{ coll_page.name }}.html">{{ coll_page.title }}</a>
                 {%- if 'description' in coll_page %}
