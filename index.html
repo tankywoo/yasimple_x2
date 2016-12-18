@@ -25,21 +25,26 @@
       <div class="category_list">
         <ul>
           {%- for page in category.pages %}
-          <li class="pagelist">
             {%- if site.default_ext in page.fname %}
+          <li class="pagelist item_arrow">
               <a href="./{{ category.name }}/{{ page.name }}.html">{{ page.title }}</a>
               {%- if 'description' in page %}
               <span class="page_description">&nbsp;&nbsp;#&nbsp;{{ page.description }}</span>
               {% endif %}
             {%- elif 'pages' in page %}  {# for collection #}
-              <span class="coll_name">{{ page.name }}</span>&nbsp;&#58;&nbsp;
+          <li class="pagelist">
+              <div class="list_wrapper">
+                <div class="coll_name item_arrow">&#91;{{ page.name }}&#93;&nbsp;&#58;&nbsp;</div>
+                <div class="coll_list">
               {%- for coll_page in page.pages %}
-                <a href="./{{ category.name }}/{{ coll_page.name }}.html">{{ coll_page.title }}</a>
+                  <a href="./{{ category.name }}/{{ coll_page.name }}.html">{{ coll_page.title }}</a>
                 {%- if 'description' in coll_page %}
-                <span class="page_description">&nbsp;{{ coll_page.description }}</span>
+                  <span class="page_description">&nbsp;{{ coll_page.description }}</span>
                 {% endif %}
                 {%- if not loop.last %}&nbsp;&#47;&nbsp;{% endif %}
               {%- endfor %}
+                </div>
+              </div>
             {%- endif %}
           </li>
           {%- endfor %}
@@ -51,4 +56,19 @@
     {%- endfor %}
   </div> <!-- end category_item -->
   {%- endif %}
+{%- endblock %}
+
+{%- block script %}
+<script>
+  var list_wrappers = document.getElementsByClassName('list_wrapper')
+  for (var i = 0, len = list_wrappers.length; i < len; i++) {
+    var list_wrapper = list_wrappers[i];
+    var coll_name = list_wrapper.getElementsByClassName('coll_name')[0];
+    var coll_list = list_wrapper.getElementsByClassName('coll_list')[0];
+    var width = coll_name.clientWidth + 3;
+    // http://stackoverflow.com/a/10118190/1276501
+    coll_list.setAttribute("style","margin-left: " + width + "px");
+    coll_list.style.marginLeft = width + "px";
+  }
+</script>
 {%- endblock %}

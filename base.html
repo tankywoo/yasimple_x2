@@ -30,5 +30,8 @@
         <p>Site Generated {{ site.time.strftime("%Y-%m-%d %H:%M:%S") }}</p>
       </div> <!-- end footer-right -->
     </div>
+
+    {% block script %}
+    {% endblock %}
   </body>
 </html>
