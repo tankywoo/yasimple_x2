@@ -139,6 +139,7 @@ li.pagelist {
 
 .item_arrow:before {
     content: "\0BB \020";
+    color: gray;
 }
 
 .category_list li.pagelist {
